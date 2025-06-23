@@ -16,17 +16,17 @@ function revelarCarta() {
       imagem: "OVisionario.png"
     },
     {
-      nome: "O Desbravador Divino",
+      nome: "O Desbravador Dimensional",
       mensagem: "Caminhe onde ninguém ousa.",
-      imagem: "ODesbravadorDivino.png"
+      imagem: "ODesbravadorDimensional.png"
     },
     {
-      nome: "O Guardião Dos Portais",
+      nome: "O Guardião De Portais",
       mensagem: "Escolha seu portal.",
       imagem: "OGuardiaoDePortais.png"
     },
     {
-      nome: "O Chamado",
+      nome: "O Chamado Do Destino",
       mensagem: "O momento chegou. Responda.",
       imagem: "OChamadoDoDestino.png"
     },
