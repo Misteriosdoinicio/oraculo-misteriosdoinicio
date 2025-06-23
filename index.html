@@ -1,26 +1,96 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oráculo – Mistérios do Início</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: radial-gradient(ellipse at center, #0a0f2c, #000);
+      color: #f0e6ff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 20px;
+    }
+
+    #sigilo {
+      width: 160px;
+      margin: 0 auto 20px;
+      animation: pulse 4s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+
+    button {
+      background: #a87fff;
+      border: none;
+      color: #fff;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #c49aff;
+    }
+
+    #cartaResultado {
+      font-size: 1.6em;
+      margin: 30px 0 10px;
+      font-weight: bold;
+    }
+
+    #cartaImagemContainer img {
+      border: 3px solid gold;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      margin-top: 10px;
+      max-width: 80%;
+    }
+
+    #significado {
+      margin-top: 20px;
+      font-size: 1.1em;
+      line-height: 1.5;
+      padding: 0 20px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <img src="sigilo-dourado.png" alt="Sigilo" class="sigilo">
-    <h1>Oráculo – Mistérios do Início</h1>
-    <p>Toque o sigilo para revelar sua carta do destino.</p>
-    <button onclick="revelarCarta()">Revelar Carta</button>
-    <!-- Nome da carta e frase curta -->
-<div id="cartaResultado" class="resultado"></div>
+  <h1>Oráculo – Mistérios do Início</h1>
 
-<!-- NOVO: Imagem da Carta -->
-<div id="cartaImagemContainer" style="margin-top: 20px;"></div>
+  <img id="sigilo" src="sigilo.png" alt="Sigilo Mistérios do Início">
 
-<!-- NOVO: Significado da Carta -->
-<div id="significado" style="margin-top: 20px; font-size: 1.2em; color: white; max-width: 600px;"></div>
-  </div>
+  <div id="cartaResultado">Clique no botão abaixo para revelar sua carta</div>
+
+  <div id="cartaImagemContainer"></div>
+
+  <div id="significado"></div>
+
+  <button onclick="revelarCarta()">🔮 Revelar Carta</button>
+
+  <audio id="somCarta">
+    <source src="som-revelacao.mp3" type="audio/mpeg">
+  </audio>
+
   <script src="script.js"></script>
+  <script>
+    function revelarCarta() {
+      const som = document.getElementById('somCarta');
+      som.play();
+    }
+  </script>
 </body>
 </html>
